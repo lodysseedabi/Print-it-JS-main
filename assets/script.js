@@ -18,17 +18,17 @@ const slides = [
 ]
 
 
-// Récupération du contenu du carrousel
+// Sélection du contenu du carrousel
 const image = document.querySelector('.banner-img');
 const tagLine = document.querySelector('#banner p');
 
-// Récupération des flèches du carrousel
+// Délection des flèches du carrousel
 const arrowLeft = document.querySelector('.arrow_left');
 const arrowRight = document.querySelector('.arrow_right');
 
-// Récupération des bullet points
+// Sélection de la section bullet points
 const dotsContainer = document.querySelector('.dots');
-
+ 
 // Fonction pour créer les bullet points
 function createDots() {
 	for (let i = 0; i < slides.length; i++) {
@@ -41,12 +41,16 @@ function createDots() {
 	}
 }
 
-// Fonction pour mettre à jour le contenu du carrousel avec la slide actuelle
-// Index de la slide actuelle
+// Initialisation de la slide actuelle
 let currentSlide = 0;
+
+// Fonction pour mettre à jour le contenu du carrousel avec la slide actuelle
 function updateCarousel() {
+	// Changement de l'image (correspondante à la slide active)
 	image.src = `./assets/images/slideshow/${slides[currentSlide].image}`;
+	// Changement du texte (correspondant à la slide active)
   	tagLine.innerHTML = slides[currentSlide].tagLine;
+	// Sélection des bullet points individuels
 	const dots = document.querySelectorAll('.dot');
 	// pour afficher le bullet point actif
 	dots.forEach((dot, index) => {
