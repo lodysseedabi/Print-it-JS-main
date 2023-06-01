@@ -22,12 +22,15 @@ const slides = [
 const image = document.querySelector('.banner-img');
 const tagLine = document.querySelector('#banner p');
 
-// Délection des flèches du carrousel
+// Sélection des flèches du carrousel
 const arrowLeft = document.querySelector('.arrow_left');
 const arrowRight = document.querySelector('.arrow_right');
 
 // Sélection de la section bullet points
 const dotsContainer = document.querySelector('.dots');
+
+// Initialisation de la slide actuelle
+let currentSlide = 0;
  
 // Fonction pour créer les bullet points
 function createDots() {
@@ -40,9 +43,6 @@ function createDots() {
 		dotsContainer.appendChild(dot);
 	}
 }
-
-// Initialisation de la slide actuelle
-let currentSlide = 0;
 
 // Fonction pour mettre à jour le contenu du carrousel avec la slide actuelle
 function updateCarousel() {
@@ -75,7 +75,6 @@ function infinityLeft() {
 		currentSlide = slides.length - 1;
 	  }
 }
-
 
 // Ajout d'un event listener à la flèche gauche
 arrowLeft.addEventListener('click', function() {
