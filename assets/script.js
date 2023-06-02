@@ -35,7 +35,7 @@ let currentSlide = 0;
 // Fonction pour créer les bullet points
 function createDots() {
 	for (let i = 0; i < slides.length; i++) {
-		const dot = document.createElement('span');
+		const dot = document.createElement('div');
 		dot.classList.add('dot');
 		if (i === 0) {
 		dot.classList.add('dot_selected');
